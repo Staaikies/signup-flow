@@ -1,28 +1,39 @@
-import ChevronDown from "../../assets/chevron-down.svg";
+import { createContext, useContext } from "react";
+import "./Cards.css";
+import { ViewMoreButton } from "../Buttons/Buttons";
 
-export const ViewMoreButton = ({onclick, isOpen}) => {
+const RadioCardContext = createContext();
+
+export const RadioCard = ({title, description, ...props}) => {
+  const {value, onChange} = useContext(RadioCardContext);
+
   return (
-    <button className="button-viewmore">
-      {isOpen ? "View less" : "View more"}
-      <img src={ChevronDown} className="button-viewmore__icon" />
-    </button>
+    <div className={`card-radio-wrapper ${value === props.value && "card-radio-wrapper--selected"}`}>
+      <label className="card-radio" htmlFor={props.id}>
+        <input 
+          type="radio"
+          checked={value === props.value}
+          onChange={onChange}
+          {...props} 
+        />
+        <span className="card-radio__icon">
+          <span className="card-radio__icon-selected"></span>
+        </span>
+        <div className="card-radio__content">
+          <h3 className="card-radio__heading">{title}</h3>
+          <p className="card-radio__description">{description}</p>
+          <div className="card-radio__fade"></div>
+        </div>
+      </label>
+      <ViewMoreButton />
+    </div>
   )
 }
 
-export const RadioCard = ({id, name, value, title, description}) => {
+export const RadioCardWrapper = ({value, onChange, children}) => {
   return (
-    <div className="card-radio">
-      <input type="radio" id={id} name={name} value={value} />
-      <div className="card-radio__header">
-        <h3 className="card-radio__heading">{title}</h3>
-        <span className="card-radio__icon">
-          <span className="card-radio__icon-active"></span>
-        </span>
-      </div>
-      <div>
-        <p className="card-radio__description">{description}</p>
-        <ViewMoreButton />
-      </div>
-    </div>
+    <RadioCardContext.Provider value={{value, onChange}}>
+      {children}
+    </RadioCardContext.Provider>
   )
 }
