@@ -21,11 +21,11 @@ export const ButtonRow = ({children}) => {
   )
 }
 
-export const ViewMoreButton = ({onclick, isOpen}) => {
+export const ViewMoreButton = ({onClick, isOpen}) => {
   return (
-    <button type="button" className="viewmore-button" onClick={() => {console.log("ViewMore Clicked!")}}>
+    <button type="button" className="viewmore-button" onClick={onClick}>
       {isOpen ? "View less" : "View more"}
-      <img src={ChevronDown} className="viewmore-button__icon" />
+      <img src={ChevronDown} className={`viewmore-button__icon ${isOpen && "view-button__icon--expanded"}`} />
     </button>
   )
 }

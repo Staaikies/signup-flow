@@ -70,8 +70,14 @@
   }
   .viewmore-button__icon {
     margin-bottom: -.2rem;
-    padding-left: .2rem;
+    padding: 0 .2rem;
     width: 1rem;
+    rotate: 0;
+    transition: .2s ease all;
+    
+    &[class*='--expanded'] {
+      rotate: -180deg;
+    }
   }
 }
 

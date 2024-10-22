@@ -23,8 +23,32 @@
   }
 
   .card-radio__content {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    max-height: 10rem;
     padding: 1.2rem;
     padding-top: 0;
+    transition: .5s ease all;
+
+    /* ==========Truncated Content Fade============= */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4rem;
+      background: linear-gradient(to bottom, transparent 10%, white 90%);
+    }
+  }
+
+  .card-radio__content.card-radio__content--expanded {
+    max-height: 25rem;
+
+    &::after {
+      content: none;
+    }
   }
 
   .card-radio__icon {
@@ -58,6 +82,11 @@
 
   .card-radio__description-wrapper {
     padding: 0 1.2rem;
+  }
+
+  .card-radio__feature-list {
+    list-style: none;
+    padding: 0;
   }
 
   /* ==========Selected / Active Radio Card============= */
