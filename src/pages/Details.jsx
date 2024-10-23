@@ -1,10 +1,11 @@
-import React from "react";
+import ReactS from "react";
 import { FormWrapper, TextInput, BirthdaySelect } from '../components/Forms/Forms';
 import { ButtonRow } from "../components/Buttons/Buttons";
 
-const Home = ({userDetails, setUserDetails, handleBirthdateChange}) => {
-  const detailsFilled = (userDetails.firstName && userDetails.lastName && userDetails.email);
+const Details = ({userDetails, setUserDetails, handleBirthdateChange}) => {
 
+  const detailsFilled = (userDetails.firstName && userDetails.lastName && userDetails.email);
+  
   return (
     <div className="section">
       <h1 className="heading heading--is-light text-center">Your details</h1>
@@ -51,4 +52,4 @@ const Home = ({userDetails, setUserDetails, handleBirthdateChange}) => {
   );
 };
 
-export default Home;
+export default Details;

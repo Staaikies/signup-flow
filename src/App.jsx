@@ -20,7 +20,8 @@ function App() {
     ],
     value: "basic",
     id: "basic",
-    name: "plantype"},
+    name: "plantype",
+    price: 99},
 
     {title: "Standard",
      description: "For those who want to rest easy at night knowing that everything is taken care of. You get access to our award winning support team 24/7, your own personalised dashboard, as well as one scheduled web call with an insurance expert to get advice on how best to manage your coverage.",
@@ -29,10 +30,11 @@ function App() {
       {description: "24/7 award winning support.", positive: true},
       {description: "One scheduled call with an insurance expert.", positive: true},
       {description: "Access to premium dashboard.", positive: false},
-     ],
-     value: "standard",
-     id: "standard",
-     name: "plantype"},
+    ],
+    value: "standard",
+    id: "standard",
+    name: "plantype",
+    price: 159},
 
      {title: "Premium",
       description: "For those that want everything we have to offer. You are considered a VIP amongst our business and will get full access to everything we have to offer. You get a customised dashboard with premium features and benefits. As well as a direct line to our team of insurance experts.",
@@ -42,9 +44,10 @@ function App() {
        {description: "Unlimited access to personal insurance expert.", positive: true},
        {description: "Access to premium dashboard.", positive: true}
       ],
-      value: "premium",
-      id: "premium",
-      name: "plantype"},
+    value: "premium",
+    id: "premium",
+    name: "plantype",
+    price: 249},
   ]);
 
   const [selectedPlan, setSelectedPlan] = useState("");

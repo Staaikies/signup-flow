@@ -27,7 +27,10 @@ export const PlanCard = ({title, description, features, ...props}) => {
         <span className="card-plan__icon">
           <span className="card-plan__icon-selected"></span>
         </span>
-        <p className="card-plan__heading">{title}</p>
+        <p className="card-plan__heading">
+          {title} <span className="card-plan__heading-subtext">policy</span>
+          <span className="card-plan__heading-price">€{props.price} per month</span>  
+        </p>
         <div className={`card-plan__content ${isExpanded ? "card-plan__content--expanded" : ""}`}>
           
           <p className="card-plan__description">{description}</p>
@@ -85,16 +88,17 @@ export const SummaryCard = ({userDetails, userPlan}) => {
           <span className="card-plan__icon">
             <span className="card-plan__icon-selected"></span>
           </span>
+          <p className="card-plan__heading">
+          {userPlan ? userPlan.title : ""} <span className="card-plan__heading-subtext">policy</span>
+          <span className="card-plan__heading-price">€{userPlan.price} per month</span>  
+        </p>
           <div className="card-plan__content card-plan__content--expanded">
-            <h3 className="card-plan__heading">{userPlan ? userPlan.title : ""}</h3>
             <p className="card-plan__description">{userPlan ? userPlan.description : ""}</p>
           </div>
         </label>
       </div>
 
-      <Link to="/plans">
-        <Button to="/plans" style="text-link">change</Button>
-      </Link>
+        <Button to="/plans" style="text-link text-center" center={true}>change</Button>
       
     </div>
   )

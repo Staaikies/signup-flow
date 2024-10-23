@@ -7,7 +7,7 @@
   }
   
   .form-field {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-align: left;
 
     &[class*='--flush'] {
@@ -33,12 +33,13 @@
     color: white;
     font-size: .8rem;
     font-weight: 600;
-    margin-bottom: .2rem;
+    margin-bottom: .4rem;
     text-align: left;
   }
 
   .text-input,
   .select-dropdown {
+    height: 3rem;
     font-size: 1rem;
     border: none;
     border-radius: .2rem;
@@ -49,9 +50,19 @@
     width: 100%;
   }
 
+  .select-dropdown {
+    padding-right: 1rem;
+  }
+
   .select-dropdown-horizontal-wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
+    .select-dropdown {
+      flex-grow: 0.3;
+      
+    }
+  
   }
 }
 
@@ -62,8 +73,4 @@
     margin-bottom: 3.5rem;
   } 
   
-  .text-input,
-  .select-dropdown {
-    height: 3rem;
-  }
 }

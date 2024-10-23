@@ -8,19 +8,19 @@ import { useNavigate } from "react-router-dom";
 export const Button = ({children, style, size, ...props}) => {
   const navigate = useNavigate();
   return (
-      <button onClick={() => navigate(props.to)} type="button" className={`button ${style ? `button--${style}` : `button--primary`} ${size ? `button--${size}` : `button--default`}`} disabled={props.disabled}>
+      <button onClick={() => navigate(props.to)} type="button" className={`button ${style ? `button--${style}` : `button--primary`} ${size ? `button--${size}` : `button--default`} ${props.center ? `button--center` : ``}`} disabled={props.disabled}>
         {children}
       </button>
   )
 }
 
-export const ButtonRow = ({leftText, leftTo, rightText, rightTo, rightDisabled, step}) => {
+export const ButtonRow = ({leftType, leftText, leftTo,rightType, rightText, rightTo, rightDisabled, step}) => {
   return (
     <div className="button-row-wrapper">
       <ProgressBar step={step} />
       <div className="button-row">
-        <Button to={leftTo} style="secondary">{leftText ? leftText : "Back"}</Button>
-        <Button to={rightTo} style="primary" disabled={rightDisabled}>{rightText}</Button>
+        <Button type={leftType ? leftType : "button"}  to={leftTo} style="secondary">{leftText ? leftText : "Back"}</Button>
+        <Button type={rightType ? rightType : "button"} to={rightTo} style="primary" disabled={rightDisabled}>{rightText}</Button>
       </div>
     </div>
   )

@@ -15,8 +15,9 @@
     transition: .2s ease all;
   }
 
-  .card-plan-wrapper--summary {
+  .card-plan-wrapper.card-plan-wrapper--summary {
     margin: 0 auto;
+    max-width: initial;
 
     .card-plan {
       border-radius: .6rem;
@@ -44,6 +45,21 @@
 
   .card-plan__heading {
     font-weight: 600;
+  }
+
+  .card-plan__heading-subtext {
+    color: #888;
+    font-size: 1rem;
+    font-weight: 800
+  }
+
+  .card-plan__heading-price {
+    color: #888;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: .2rem;
   }
 
   .card-plan__content {
@@ -112,6 +128,10 @@
     padding: 0;
   }
 
+  .card-plan__feature {
+    margin: .6rem 0 ;
+  }
+
   /* ==========Selected / Active plan Card============= */
   .card-plan-wrapper--selected {
     border: .2rem solid #32A367;
@@ -137,6 +157,7 @@
 
   /* ==========SUMMARY CARD============= */
   .summary-card {
+    margin: 0 auto;
     margin-bottom: 1rem;
     padding: 1rem;
     max-width: 38rem;
@@ -222,7 +243,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90%;
+    height: 85%;
   }
 
   .card-plan__content-spacer {

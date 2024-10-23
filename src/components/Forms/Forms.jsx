@@ -1,8 +1,8 @@
 import "./Forms.css";
 
-export const FormWrapper = ({children}) => {
+export const FormWrapper = ({children, onSubmit}) => {
   return (
-    <form className="form">
+    <form className="form" onSubmit={onSubmit}>
       {children}
     </form>
   )
