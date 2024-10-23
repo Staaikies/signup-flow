@@ -1,0 +1,52 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+  /* ==========STRUCTURE============= */
+  .page-content {
+    display: flex;
+    padding: 6rem 0;
+    justify-content: center;
+  }
+
+  .section {
+    width: 100%;
+    min-width: 26rem;
+  }
+
+  /* ==========TYPOGRAPHY============= */
+  .text-center {
+    text-align: center;
+  }
+
+  .heading {
+    color: #333;
+    margin-bottom: 2rem;
+  
+    &[class*='--is-light'] {
+      color: white;
+    }
+  }
+  
+  .paragraph {
+    color: #333;
+    margin-bottom: 2rem;
+  
+    &[class*='--is-light'] {
+      color: white;
+    }
+  }
+}
+
+/*== Tablets ==*/
+@media only screen and (min-width: 600px) {
+  .section {
+    max-width: 30rem;
+  }
+}
+
+/*== Landscape Tablets / Small Desktop Browser Window ==*/
+@media only screen and (min-width: 768px) {
+ .section {
+  max-width: 55rem;
+ }
+  
+}

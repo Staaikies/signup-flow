@@ -1,0 +1,69 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+  .form {
+    max-width: 26rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .form-field {
+    margin-bottom: 1rem;
+    text-align: left;
+
+    &[class*='--flush'] {
+      margin: 0;
+    }
+  }
+
+  .form-field.form-field--horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text-input-wrapper:first-child {
+      margin-right: .2rem;
+    }
+    .text-input-wrapper:last-child {
+      margin-left: .2rem;
+    }
+  }
+  
+  .form-label {
+    display: block;
+    color: white;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: .2rem;
+    text-align: left;
+  }
+
+  .text-input,
+  .select-dropdown {
+    font-size: 1rem;
+    border: none;
+    border-radius: .2rem;
+    padding: .7rem .6rem;
+  }
+
+  .text-input {
+    width: 100%;
+  }
+
+  .select-dropdown-horizontal-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+
+/*== Landscape Tablets / Small Desktop Browser Window ==*/
+@media only screen and (min-width: 768px) {
+  .form-field {
+    margin-bottom: 3.5rem;
+  } 
+  
+  .text-input,
+  .select-dropdown {
+    height: 3rem;
+  }
+}

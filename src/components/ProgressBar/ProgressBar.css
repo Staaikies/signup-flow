@@ -1,0 +1,51 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+  .progress-bar {
+    position: relative;
+    height: .8rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0;
+    
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: .8rem;
+      border-radius: 0;
+      background: #32A367;
+    }
+  }
+  .progress-bar.progress-bar--step-1 {
+    &::after {
+      right: 66%;
+    }
+  }
+  .progress-bar.progress-bar--step-2 {
+    &::after {
+      right: 33%;
+    }
+  }
+}
+
+/*== Tablets ==*/
+@media only screen and (min-width: 600px) {
+  .progress-bar {
+    height: .6rem;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: .8rem;
+    background-color: white;
+    border-radius: 10rem;
+
+    &::after {
+      height: .6rem;
+      border-radius: 10rem;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createContext, useContext } from "react";
+import { Link } from "react-router-dom";
 import { Button, ViewMoreButton } from "../Buttons/Buttons";
 import { Icon } from "../Icons/Icons"
 import "./Cards.css";
@@ -26,9 +27,11 @@ export const PlanCard = ({title, description, features, ...props}) => {
         <span className="card-plan__icon">
           <span className="card-plan__icon-selected"></span>
         </span>
+        <p className="card-plan__heading">{title}</p>
         <div className={`card-plan__content ${isExpanded ? "card-plan__content--expanded" : ""}`}>
-          <h3 className="card-plan__heading">{title}</h3>
+          
           <p className="card-plan__description">{description}</p>
+          <div className="card-plan__content-spacer"></div>
           {features 
           ?
             <ul className="card-plan__feature-list">
@@ -62,7 +65,7 @@ const SummaryLine = ({type, content}) => {
         <label className="summary-card-line__label">{type}</label>
         <p className="summary-card-line__content">{content}</p>
       </div>
-      <Button style="text-link">edit</Button>
+      <Button to="/details" style="text-link">edit</Button>
     </div>
   )
 }
@@ -70,11 +73,11 @@ const SummaryLine = ({type, content}) => {
 export const SummaryCard = ({userDetails, userPlan}) => {
   return (
     <div className="summary-card">
-      <h2 className="summary-card__heading">Summary</h2>
+      <h1 className="summary-card__heading">Summary</h1>
       <div className="summary-card-line-wrapper">
-        <SummaryLine type="Name:" content={userDetails.name} />
+        <SummaryLine type="Name:" content={userDetails.firstName + " " + userDetails.lastName} />
         <SummaryLine type="Email:" content={userDetails.email} />
-        <SummaryLine type="Birth date:" content={userDetails.birthdate} />
+        <SummaryLine type="Birth date:" content={userDetails.birthdate.day + "/" + userDetails.birthdate.month + "/" + userDetails.birthdate.year} />
       </div>
       
       <div className="card-plan-wrapper card-plan-wrapper--selected card-plan-wrapper--summary">
@@ -89,7 +92,10 @@ export const SummaryCard = ({userDetails, userPlan}) => {
         </label>
       </div>
 
-      <Button style="text-link">change</Button>
+      <Link to="/plans">
+        <Button to="/plans" style="text-link">change</Button>
+      </Link>
+      
     </div>
   )
 }
