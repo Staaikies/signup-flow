@@ -11,7 +11,7 @@ Make sure you have the following software installed on your machine:
 ### Installation
 **1) Clone the respository:**
 
-`git clone git@github.com:Staaikies/signup-flow.git`
+`git clone https://github.com/Staaikies/signup-flow.git`
 
 **2) Navigate into the project directory:**
 
