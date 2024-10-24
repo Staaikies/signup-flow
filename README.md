@@ -15,7 +15,7 @@ Make sure you have the following software installed on your machine:
 
 **2) Navigate into the project directory:**
 
-`cd your-repo-name`
+`cd signup-flow`
 
 **3) Install dependencies:**
 
