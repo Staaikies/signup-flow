@@ -15,7 +15,6 @@ const Summary = ({userDetails, plans, selectedPlan}) => {
         rightTo={(userDetails && selectedPlan) ? "/done" : ""}
         step={3}
       />
-      
     </div>
   );
 };

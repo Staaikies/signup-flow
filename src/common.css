@@ -21,6 +21,10 @@
   .heading {
     color: #333;
     margin-bottom: 2rem;
+
+    &[class*='--large'] {
+      font-size: 3rem;
+     }
   
     &[class*='--is-light'] {
       color: white;
@@ -33,6 +37,10 @@
   
     &[class*='--is-light'] {
       color: white;
+    }
+    
+    &[class*='--large'] {
+     font-size: 1.4rem;
     }
   }
 }

@@ -8,11 +8,19 @@ export const FormWrapper = ({children, onSubmit}) => {
   )
 }
 
-export const TextInput = ({ label, type, value, onChange, id }) => {
+export const TextInput = ({ label, type = "text", value, onChange, id, error }) => {
   return (
     <div className="text-input-wrapper">
-      <label className="form-label">{label}</label>
-      <input type={type} id={id} name={id} value={value} onChange={onChange} className="text-input" />
+      <label className="form-label" htmlFor={id}>{label}</label>
+      <input 
+        type={type} 
+        id={id} 
+        name={id} 
+        value={value} 
+        onChange={onChange} 
+        className={`text-input ${error ? "input-error" : ""}`}
+      />
+      {error && <span className="error-message">{error}</span>}
     </div>
   );
 };
@@ -25,7 +33,7 @@ export const BirthdaySelect = ({ label, value, onChange }) => {
 
   return (
     <div>
-      <label className="form-label">{label}</label>
+      <label className="form-label" htmlFor="day">{label}</label>
       <div className="select-dropdown-horizontal-wrapper">
         <select className="select-dropdown" value={value.day} onChange={(e) => onChange({ ...value, day: e.target.value })}>
           <option value="">Day</option>

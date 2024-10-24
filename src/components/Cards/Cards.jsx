@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { createContext, useContext } from "react";
-import { Link } from "react-router-dom";
 import { Button, ViewMoreButton } from "../Buttons/Buttons";
 import { Icon } from "../Icons/Icons"
 import "./Cards.css";
@@ -97,9 +96,7 @@ export const SummaryCard = ({userDetails, userPlan}) => {
           </div>
         </label>
       </div>
-
-        <Button to="/plans" style="text-link text-center" center={true}>change</Button>
-      
+      <Button to="/plans" style="text-link text-center" center={true}>change</Button>
     </div>
   )
 }
