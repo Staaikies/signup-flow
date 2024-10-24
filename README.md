@@ -1,8 +1,29 @@
-# React + Vite
+# Policy Signup Flow 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting started
+Follow these instructions to get the React Vite application running on your local machine for development or testing purposes.
 
-Currently, two official plugins are available:
+### Prerequisites
+Make sure you have the following software installed on your machine:
+- **Node.js** (version 14 or higher): You can download it from [here](https://nodejs.org/).
+- **npm** or **yarn**: npm is included with Node.js. Alternatively, you can install Yarn from [here](https://classic.yarnpkg.com/en/docs/install/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation
+**1) Clone the respository:**
+
+`git clone https://github.com/your-username/your-repo-name.git`
+
+**2) Navigate into the project directory:**
+
+`cd your-repo-name`
+
+**3) Install dependencies:**
+
+`npm install` or `yarn install`
+
+
+## Running the app
+
+Once the dependencies are installed, you can start the development server:
+
+`npm run dev` or `yarn dev`
